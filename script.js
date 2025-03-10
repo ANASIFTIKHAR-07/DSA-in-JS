@@ -9,8 +9,8 @@
 // We can initialzed the var after the console while in case of let we can not do that,
 //  We will face the initialization error
 
-let a = 10;
-let b = 20;
+// let a = 10;
+// let b = 20;
 
 console.log("The sum of a and b is" + a + b); // like this, it is a concatination case
 // But if we:
@@ -68,3 +68,30 @@ console.log(one, two);
 // Now, we will move towards the relatrional operators. We get the boolean values in the relational operators
 // <, >, !=, >=, <==, =, ==, ===
 // Also includes the strict case checkings.
+
+
+
+let a = 15 // Assignment operator
+
+
+if (a == 12) { // "==" is used in a conditional statement here and "==" is used as a check
+    console.log("A is equal to 12");
+}
+// There is a much stronger approach to check the statement and that is "==="=> Most strict type of check,
+// Even check the datatype of the values.
+
+
+// Now, Logical Operators. Used while checking the multiple statements
+// && , || => AND and OR operators
+// && returns true when both the values are true.
+// || returns true when either one of the condition is true.
+
+console.log(10> 6 && 5< 12); // True
+console.log(10> 6 && 5> 12); // False
+console.log(10> 6 || 5> 12); // True
+console.log(10< 6 || 5> 12); // false
+
+
+
+// Unary Operators
+// "++", "--"
