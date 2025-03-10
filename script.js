@@ -59,3 +59,12 @@ console.log(one, two);
 
 [one, two] = [two, one]; // Array destrucutring assignment
 // Left side already existing array of values, Right side a new array with the swapped values without the use of third variable.
+
+
+
+// In the arithmetic operator we learnt about the mod and the divide concepts
+
+
+// Now, we will move towards the relatrional operators. We get the boolean values in the relational operators
+// <, >, !=, >=, <==, =, ==, ===
+// Also includes the strict case checkings.
