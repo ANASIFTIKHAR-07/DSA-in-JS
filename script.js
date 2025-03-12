@@ -95,3 +95,4 @@ console.log(10< 6 || 5> 12); // false
 
 // Unary Operators
 // "++", "--"
+// There are two type of notations in it: Post fix and Pre fix 
