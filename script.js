@@ -161,6 +161,19 @@ d++;
 let length = 10;
 let width = 20;
 
+// Check if the triangle is valid using the triangle inequality theorem
+// For a triangle to be valid, the sum of any two sides must be greater than the third side
+
+if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2)) {
+    console.log("The triangle is valid.");
+} else {
+    console.log("The triangle is not valid. The sum of any two sides must be greater than the third side.");
+    console.log("side1 + side2 = " + (side1 + side2) + " should be > " + side3);
+    console.log("side2 + side3 = " + (side2 + side3) + " should be > " + side1);
+    console.log("side1 + side3 = " + (side1 + side3) + " should be > " + side2);
+}
+
+
 let area = length * width;
 console.log("The area of the rectangle is " + area);
 
@@ -179,6 +192,14 @@ let s = (side1 + side2 + side3) / 2;
 let triangleArea = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
 
 console.log("The area of the triangle is " + triangleArea);
+
+// Find the circumference of the circle
+let r = 10;
+console.log(2*Math.PI*r);
+
+
+
+
 
 
 
