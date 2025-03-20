@@ -130,9 +130,56 @@ let c = a + b + a++ + b++ + ++a + ++b;
 let d = true
 
 d++;
-console.log(d);
+// console.log(d);
 
 // We can not use the unary operator on the boolean value.
 // We can only use it on the numeric values. 
+
+
+// Math Functions:
+
+// console.log(Math.round(4.6));
+// console.log(Math.ceil(4.1));
+// console.log(Math.floor(4.9));
+// console.log(Math.trunc(4.9));
+// console.log(Math.random());
+// console.log(Math.pow(2, 3));
+// console.log(Math.sqrt(64));
+// console.log(Math.abs(-4.6));
+// console.log(Math.max(23, 55, 78, 99, 100));
+// console.log(Math.min(23, 55, 78, 99, 100));
+// console.log(Math.PI);
+// console.log(Math.cbrt(27));
+// console.log(Math.hypot(3, 4));
+// console.log(Math.trunc((Math.random()*9000) + 1000));
+
+// let num = 123.456;
+// console.log(num.toFixed(2)); // It will return the string value of the number
+
+// Find the Are and the perimeter of the rectangle
+
+let length = 10;
+let width = 20;
+
+let area = length * width;
+console.log("The area of the rectangle is " + area);
+
+let perimeter = 2 * (length + width);
+console.log("The perimeter of the rectangle is " + perimeter);
+
+// Calculate area of triangle using Heron's formula
+let side1 = 5;
+let side2 = 6; 
+let side3 = 7;
+
+// Calculate semi-perimeter
+let s = (side1 + side2 + side3) / 2;
+
+// Calculate area using Heron's formula
+let triangleArea = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+console.log("The area of the triangle is " + triangleArea);
+
+
 
 
