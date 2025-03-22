@@ -161,6 +161,56 @@ if (amount === 1) {
 
 
 
+// Ternary Operator
+// The ternary operator is a shorthand way of writing an if-else statement. It takes three operands: a condition, a value if true, and a value if false. 
+// Syntax: condition ? valueIfTrue : valueIfFalse
+let age = 18;
+let canVote = (age >= 18) ? "You can vote." : "You cannot vote.";
+console.log(canVote);
+
+// Nested Ternary Operator
+// A nested ternary operator is when you use a ternary operator inside another ternary operator. 
+// This can be useful for multiple conditions but can reduce readability.
+let score = 85;
+let grade = (score >= 90) ? "A" : (score >= 80) ? "B" : (score >= 70) ? "C" : "F";
+console.log("Your grade is: " + grade);
+
+// Switch Case
+// A switch case is used when you have multiple conditions based on the value of a single variable. 
+// It is often cleaner and more readable than using multiple if-else statements when checking the same variable against different values.
+let day = 3;
+let dayName;
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+console.log("The day is: " + dayName);
+
+// Use if-else when you have complex conditions or when the conditions are not based on a single variable.
+// Use switch case when you are checking the same variable against multiple constant values.
+console.log("Use if-else for complex conditions and switch case for multiple constant checks.");
+
 
 
 
