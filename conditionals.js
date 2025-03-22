@@ -1,76 +1,175 @@
 // Voter eligibility checker
 // Get the user's age using prompt
-let age = prompt("Please enter your age:");
+// let age = prompt("Please enter your age:");
 
 // Convert the input to a number
-age = Number(age);
+// age = Number(age);
 
 // Check if the person is eligible to vote (18 or older)
 
-if (isNaN(age)) {
-    console.log("Please enter a valid age!");
-}
+// if (isNaN(age)) {
+//     console.log("Please enter a valid age!");
+// }
 
-else if (age >= 18) {
-    console.log("You are eligible to vote!");
-}
+// else if (age >= 18) {
+//     console.log("You are eligible to vote!");
+// }
 
-else if (age < 18) {
-    console.log("Sorry, you are not eligible to vote yet.");
-    console.log("You need to wait " + (18 - age) + " more years to be eligible.");
-}
- 3
+// else if (age < 18) {
+//     console.log("Sorry, you are not eligible to vote yet.");
+//     console.log("You need to wait " + (18 - age) + " more years to be eligible.");
+// }
+
 
 // Shop discount calculator
 // Get the purchase amount using prompt
-let purchaseAmount = prompt("Please enter your purchase amount:");
+// These types of questions are called range questions, in which we can follow the same logic to solve these kind of questions 
+// let purchaseAmount = prompt("Please enter your purchase amount:");
 
 // Convert the input to a number
-purchaseAmount = Number(purchaseAmount);
+// purchaseAmount = Number(purchaseAmount);
 
 // Check if the input is valid
-if (isNaN(purchaseAmount)) {
-    console.log("Please enter a valid purchase amount!");
-} 
-else if (purchaseAmount <= 0) {
-    console.log("Purchase amount must be greater than 0!");
+// if (isNaN(purchaseAmount)) {
+//     console.log("Please enter a valid purchase amount!");
+// }
+// else if (purchaseAmount <= 0) {
+//     console.log("Purchase amount must be greater than 0!");
+// }
+// // Check if the Puchase Amount is negative
+// else if (purchaseAmount < 0) {
+//     console.log("Purchase amount cannot be negative!");
+// }
+// // Apply different discount rates based on purchase amount ranges
+// else if (purchaseAmount > 25000) {
+//     let discount = purchaseAmount * 0.30; // 30% discount
+//     let finalAmount = purchaseAmount - discount;
+//     console.log("Congratulations! You get a 30% discount.");
+//     console.log("Discount amount: $" + discount.toFixed(2));
+//     console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+// }
+// else if (purchaseAmount > 15001 && purchaseAmount <= 25000) {
+//     let discount = purchaseAmount * 0.25; // 25% discount
+//     let finalAmount = purchaseAmount - discount;
+//     console.log("Congratulations! You get a 25% discount.");
+//     console.log("Discount amount: $" + discount.toFixed(2));
+//     console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+// }
+// else if (purchaseAmount > 10001 && purchaseAmount <= 15000) {
+//     let discount = purchaseAmount * 0.20; // 20% discount
+//     let finalAmount = purchaseAmount - discount;
+//     console.log("Congratulations! You get a 20% discount.");
+//     console.log("Discount amount: $" + discount.toFixed(2));
+//     console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+// }
+// else if (purchaseAmount > 5001 && purchaseAmount <= 10000) {
+//     let discount = purchaseAmount * 0.15; // 15% discount
+//     let finalAmount = purchaseAmount - discount;
+//     console.log("Congratulations! You get a 15% discount.");
+//     console.log("Discount amount: $" + discount.toFixed(2));
+//     console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+// }
+// else if (purchaseAmount > 0 && purchaseAmount <= 5000) {
+//     let discount = purchaseAmount * 0.05; // 5% discount
+//     let finalAmount = purchaseAmount - discount;
+//     console.log("You get a 5% discount.");
+//     console.log("Discount amount: $" + discount.toFixed(2));
+//     console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+// }
+
+
+
+
+// Bill Calculator
+
+// let unit = prompt("Please enter the number of units consumed:");
+
+// unit = Number(unit);
+// let amount = 0;
+
+// if (isNaN(unit)) {
+//     console.log("Please enter a valid number of units!");
+// }
+
+// else if (unit < 0) {
+//     console.log("Number of units cannot be negative!");
+// }
+
+// if (unit > 400) {
+//     amount = (unit - 400) * 18;
+//     unit = 400;
+// }
+// if (unit> 200 && unit <= 400) {
+//     amount += (unit - 200) * 15;
+//     unit = 200;
+// }
+// if (unit > 100 && unit <= 200) {
+//     amount += (unit - 100) * 12;
+//     unit = 100;
+// }
+// if (unit <= 100) {
+//     amount += unit * 10;
+// }
+
+// console.log("Total amount to pay: " + amount.toFixed(2));
+
+
+// Pakistani Rupee (PKR) Denomination Calculator
+let amount = 5001; // Amount in PKR
+
+console.log("Breaking down " + amount + " PKR into denominations:");
+
+if (amount >= 5000) {
+    console.log("5000 PKR notes: " + Math.floor(amount / 5000));
+    amount %= 5000;
 }
-// Apply different discount rates based on purchase amount ranges
-else if (purchaseAmount > 25000) {
-    let discount = purchaseAmount * 0.30; // 30% discount
-    let finalAmount = purchaseAmount - discount;
-    console.log("Congratulations! You get a 30% discount.");
-    console.log("Discount amount: $" + discount.toFixed(2));
-    console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+if (amount >= 1000) {
+    console.log("1000 PKR notes: " + Math.floor(amount / 1000));
+    amount %= 1000;
 }
-else if (purchaseAmount > 15001 && purchaseAmount <= 25000) {
-    let discount = purchaseAmount * 0.25; // 25% discount
-    let finalAmount = purchaseAmount - discount;
-    console.log("Congratulations! You get a 25% discount.");
-    console.log("Discount amount: $" + discount.toFixed(2));
-    console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+if (amount >= 500) {
+    console.log("500 PKR notes: " + Math.floor(amount / 500));
+    amount %= 500;
 }
-else if (purchaseAmount > 10001 && purchaseAmount <= 15000) {
-    let discount = purchaseAmount * 0.20; // 20% discount
-    let finalAmount = purchaseAmount - discount;
-    console.log("Congratulations! You get a 20% discount.");
-    console.log("Discount amount: $" + discount.toFixed(2));
-    console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+if (amount >= 100) {
+    console.log("100 PKR notes: " + Math.floor(amount / 100));
+    amount %= 100;
 }
-else if (purchaseAmount > 5001 && purchaseAmount <= 10000) {
-    let discount = purchaseAmount * 0.15; // 15% discount
-    let finalAmount = purchaseAmount - discount;
-    console.log("Congratulations! You get a 15% discount.");
-    console.log("Discount amount: $" + discount.toFixed(2));
-    console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+if (amount >= 50) {
+    console.log("50 PKR notes: " + Math.floor(amount / 50));
+    amount %= 50;
 }
-else if (purchaseAmount > 0 && purchaseAmount <= 5000) {
-    let discount = purchaseAmount * 0.05; // 5% discount
-    let finalAmount = purchaseAmount - discount;
-    console.log("You get a 5% discount.");
-    console.log("Discount amount: $" + discount.toFixed(2));
-    console.log("Final amount to pay: $" + finalAmount.toFixed(2));
+if (amount >= 20) {
+    console.log("20 PKR notes: " + Math.floor(amount / 20));
+    amount %= 20;
 }
+if (amount >= 10) {
+    console.log("10 PKR notes: " + Math.floor(amount / 10));
+    amount %= 10;
+}
+if (amount >= 5) {
+    console.log("5 PKR notes: " + Math.floor(amount / 5));
+    amount %= 5;
+}
+if (amount >= 2) {
+    console.log("2 PKR coins: " + Math.floor(amount / 2));
+    amount %= 2;
+}
+if (amount === 1) {
+    console.log("1 PKR coin: " + amount);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
