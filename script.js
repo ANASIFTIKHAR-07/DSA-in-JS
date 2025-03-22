@@ -195,7 +195,7 @@ console.log("The area of the triangle is " + triangleArea);
 
 // Find the circumference of the circle
 let r = 10;
-console.log(2*Math.PI*r);
+console.log((2*Math.PI*r).toFixed(2));
 
 
 
