@@ -213,6 +213,87 @@ console.log("Use if-else for complex conditions and switch case for multiple con
 
 
 
+// let num = 0.1 + 0.2
+
+// switch (num) {
+//     case 0.3:
+//         console.log("Hello");
+
+//         break;
+//     case 0.4:
+//         console.log("Hey");
+//         break;
+
+
+//     default:
+//         console.log("AOA");
+        
+//         break;
+// }
+
+
+// 🚀 Floating-Point Precision Issue in JavaScript
+// JavaScript uses IEEE 754 floating-point arithmetic, which causes precision errors
+// Example: 0.1 + 0.2 !== 0.3, but rather 0.30000000000000004
+
+// ❌ Original Problem (This will NOT work as expected)
+let num = 0.1 + 0.2;
+
+switch (num) {
+    case 0.3:  // This case will not run because num is actually 0.30000000000000004
+        console.log("Hello");
+        break;
+    case 0.4:
+        console.log("Hey");
+        break;
+    default:
+        console.log("AOA"); // This will run due to floating-point error
+        break;
+}
+
+// ✅ Solution 1: Using toFixed (Converts to String)
+let numFixed = (0.1 + 0.2).toFixed(1); // "0.3" (String)
+
+switch (numFixed) {
+    case "0.3":  // Since toFixed returns a string, we compare with "0.3"
+        console.log("Hello");
+        break;
+    case "0.4":
+        console.log("Hey");
+        break;
+    default:
+        console.log("AOA");
+        break;
+}
+
+// ✅ Solution 2: Using Math.round to Ensure Exact Decimal Value
+let numRounded = Math.round((0.1 + 0.2) * 10) / 10; // Rounds to 0.3
+
+switch (numRounded) {
+    case 0.3:  // Now it correctly matches 0.3
+        console.log("Hello");
+        break;
+    case 0.4:
+        console.log("Hey");
+        break;
+    default:
+        console.log("AOA");
+        break;
+}
+
+// ✅ Solution 3: Using Number.EPSILON for Precise Comparison (Best for If-Else)
+let numEpsilon = 0.1 + 0.2;
+if (Math.abs(numEpsilon - 0.3) < Number.EPSILON) {
+    console.log("Hello");  // Now correctly detects 0.3
+} else {
+    console.log("AOA");
+}
+
+// 🔥 Best Choice?
+// ✅ Use `toFixed()` for string-based switch cases
+// ✅ Use `Math.round()` for numeric switch cases
+// ✅ Use `Number.EPSILON` for best precision in comparisons
+
 
 
 
