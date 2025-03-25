@@ -110,25 +110,56 @@
 
 // Find the factors of n number
 
+// let promp = prompt("Enter your number: ")
+
+// if (promp === null) {
+//     console.log("Prompt cancelled!!");
+// }
+// else {
+//     let fac = Number(promp)
+
+//     if (isNaN(fac)) {
+//         console.log("The given number is invalid");
+//     }
+//     else {
+//         if (fac > 0) {
+//            for (let i = 1; i <= Math.floor(fac/2); i++) {
+//                 if (fac%i === 0) {
+//                     console.log(i);
+//                 }
+//            }
+//            console.log(fac);
+//         }
+//         else{
+//             console.log("The given number should be greater than zero and also non-negative!");
+            
+//         }
+
+//     } 
+// }
+
+
 let promp = prompt("Enter your number: ")
 
 if (promp === null) {
     console.log("Prompt cancelled!!");
 }
 else {
-    let fac = Number(promp)
+    let priNum = Number(promp)
 
-    if (isNaN(fac)) {
+    if (isNaN(priNum)) {
         console.log("The given number is invalid");
     }
     else {
-        if (fac > 0) {
-           for (let i = 1; i <= Math.floor(fac/2); i++) {
-                if (fac%i === 0) {
-                    console.log(i);
-                }
-           }
-        //    console.log(fac);
+        if (priNum > 0) {
+           let isPrime = true;
+            for (let i = 2; i <= Math.floor(priNum/2); i++) {
+                if (priNum%i === 0) {
+                    isPrime = false;
+                    break;  
+                }       
+            }
+            console.log(isPrime);         
         }
         else{
             console.log("The given number should be greater than zero and also non-negative!");
