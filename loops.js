@@ -80,24 +80,55 @@
 // Find the factorial of n natural numbers
 
 
+// let promp = prompt("Enter your number: ")
+
+// if (promp === null) {
+//     console.log("Prompt cancelled!!");
+// }
+// else {
+//     let fc = Number(promp)
+
+//     if (isNaN(fc)) {
+//         console.log("The given number is invalid");
+//     }
+//     else {
+//         if (fc > 0) {
+//             let fact = 1 // The reason why we defined the zero is that in factorial we have to multiply the number with the next one unlike the sum
+//             for (let i = 1; i <= fc; i++) {
+//                 fact = fact * i;
+//             }
+//             console.log(`The factorial of ${fc} is: ${fact}`);
+//         }
+//         else{
+//             console.log("The given number should be greater than zero and also non-negative!");
+            
+//         }
+
+//     } 
+// }
+
+
+// Find the factors of n number
+
 let promp = prompt("Enter your number: ")
 
 if (promp === null) {
     console.log("Prompt cancelled!!");
 }
 else {
-    let fc = Number(promp)
+    let fac = Number(promp)
 
-    if (isNaN(fc)) {
+    if (isNaN(fac)) {
         console.log("The given number is invalid");
     }
     else {
-        if (fc > 0) {
-            let fact = 1 // The reason why we defined the zero is that in factorial we have to multiply the number with the next one unlike the sum
-            for (let i = 1; i <= fc; i++) {
-                fact = fact * i;
-            }
-            console.log("The Factorial of N number :", fact);
+        if (fac > 0) {
+           for (let i = 1; i <= Math.floor(fac/2); i++) {
+                if (fac%i === 0) {
+                    console.log(i);
+                }
+           }
+        //    console.log(fac);
         }
         else{
             console.log("The given number should be greater than zero and also non-negative!");
@@ -106,4 +137,3 @@ else {
 
     } 
 }
-
