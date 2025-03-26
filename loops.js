@@ -152,14 +152,14 @@ else {
     }
     else {
         if (priNum > 0) {
-           let isPrime = true;
-            for (let i = 2; i <= Math.floor(priNum/2); i++) {
-                if (priNum%i === 0) {
-                    isPrime = false;
-                    break;  
-                }       
-            }
-            console.log(isPrime);         
+            console.log(isPrime(priNum));
+            // let isPrime = true;   Alternative method
+            // for (let i = 2; i <= Math.floor(priNum/2); i++) {
+            //     if (priNum%i === 0) {
+            //         isPrime = false;
+            //         break;  
+            //     }       
+            // }
         }
         else{
             console.log("The given number should be greater than zero and also non-negative!");
@@ -167,4 +167,15 @@ else {
         }
 
     } 
+}
+
+
+function isPrime(priNum) {
+        if(priNum<=1) return false;
+        if(priNum==2) return true;
+        if(priNum%2 == 0 ) return false;
+        for(let i = 3; i<= Math.floor(Math.sqrt(priNum)) ; i+=2){
+            if(priNum%i == 0) return false
+        }
+        return true
 }
