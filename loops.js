@@ -139,46 +139,46 @@
 // }
 
 
-let promp = prompt("Enter your number: ")
+// let promp = prompt("Enter your number: ")
 
-if (promp === null) {
-    console.log("Prompt cancelled!!");
-}
-else {
-    let priNum = Number(promp)
+// if (promp === null) {
+//     console.log("Prompt cancelled!!");
+// }
+// else {
+//     let priNum = Number(promp)
 
-    if (isNaN(priNum)) {
-        console.log("The given number is invalid");
-    }
-    else {
-        if (priNum > 0) {
-            console.log(isPrime(priNum));
-            // let isPrime = true;   Alternative method
-            // for (let i = 2; i <= Math.floor(priNum/2); i++) {
-            //     if (priNum%i === 0) {
-            //         isPrime = false;
-            //         break;  
-            //     }       
-            // }
-        }
-        else{
-            console.log("The given number should be greater than zero and also non-negative!");
+//     if (isNaN(priNum)) {
+//         console.log("The given number is invalid");
+//     }
+//     else {
+//         if (priNum > 0) {
+//             console.log(isPrime(priNum));
+//             // let isPrime = true;   Alternative method
+//             // for (let i = 2; i <= Math.floor(priNum/2); i++) {
+//             //     if (priNum%i === 0) {
+//             //         isPrime = false;
+//             //         break;  
+//             //     }       
+//             // }
+//         }
+//         else{
+//             console.log("The given number should be greater than zero and also non-negative!");
             
-        }
+//         }
 
-    } 
-}
+//     } 
+// }
 
 
-function isPrime(priNum) {
-        if(priNum<=1) return false;
-        if(priNum==2) return true;
-        if(priNum%2 == 0 ) return false;
-        for(let i = 3; i<= Math.floor(Math.sqrt(priNum)) ; i+=2){
-            if(priNum%i == 0) return false
-        }
-        return true
-}
+// function isPrime(priNum) {
+//         if(priNum<=1) return false;
+//         if(priNum==2) return true;
+//         if(priNum%2 == 0 ) return false;
+//         for(let i = 3; i<= Math.floor(Math.sqrt(priNum)) ; i+=2){
+//             if(priNum%i == 0) return false
+//         }
+//         return true
+// }
 
 // The 'break' statement exits the loop immediately, while 'continue' skips the current iteration and proceeds to the next one.
 // Both are used to control the flow of loops based on certain conditions.
@@ -199,10 +199,45 @@ function isPrime(priNum) {
 // code 
 // condition
 //}
+
 // For Example:
+// The while loop is used when the number of iterations is not known beforehand and depends on a condition being met. 
+// It is particularly useful in situations where you want to continue executing a block of code until a specific condition changes, 
+// such as reading input until a valid response is given, or processing items in a collection until it is empty. 
+// In contrast, a traditional for loop is typically used when the number of iterations is known or can be determined before entering the loop.
+
 
 // let i = 1;
 // while(i >= 23) {
 //     console.log(i);
 //     i++
 // }
+
+let promp = prompt("Enter your number: ")
+
+if (promp === null) {
+    console.log("Prompt cancelled!!");
+}
+else {
+    let n = Number(promp)
+
+    if (isNaN(n)) {
+        console.log("The given number is invalid");
+    }
+    else {
+        if (n > 0) {
+            let sum = 0;
+            while (n>0) {
+                let rem = n%10
+                sum = sum + rem
+                n = Math.floor(n/10)
+            }
+            console.log(sum);
+        }
+        else{
+            console.log("The given number should be greater than zero and also non-negative!");
+            
+        }
+
+    } 
+}
