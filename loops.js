@@ -179,3 +179,30 @@ function isPrime(priNum) {
         }
         return true
 }
+
+// The 'break' statement exits the loop immediately, while 'continue' skips the current iteration and proceeds to the next one.
+// Both are used to control the flow of loops based on certain conditions.
+
+
+// Now, time for the while loop,
+// In case of for loops"
+
+
+// for(start ; end ; change) {
+// This is the flow of this for loop
+// }
+
+
+// In case of while loops:
+// start;
+// while(condition){
+// code 
+// condition
+//}
+// For Example:
+
+// let i = 1;
+// while(i >= 23) {
+//     console.log(i);
+//     i++
+// }
