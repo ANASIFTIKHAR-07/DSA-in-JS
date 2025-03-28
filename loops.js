@@ -101,7 +101,7 @@
 //         }
 //         else{
 //             console.log("The given number should be greater than zero and also non-negative!");
-            
+
 //         }
 
 //     } 
@@ -132,7 +132,7 @@
 //         }
 //         else{
 //             console.log("The given number should be greater than zero and also non-negative!");
-            
+
 //         }
 
 //     } 
@@ -163,7 +163,7 @@
 //         }
 //         else{
 //             console.log("The given number should be greater than zero and also non-negative!");
-            
+
 //         }
 
 //     } 
@@ -241,11 +241,11 @@
 //                 n = Math.floor(n/10)
 //             }
 //             console.log(rev);
-            
+
 //         }
 //         else{
 //             console.log("The given number should be greater than zero and also non-negative!");
-            
+
 //         }
 
 //     } 
@@ -266,22 +266,47 @@ else {
         console.log("The given number is invalid");
     }
     else {
-        if (n > 0) {
-        let sum = 0;
-        while (n>0) {
-            let fact= 1;
-            let rem = n%10
-            for(let i =1 ; i<=rem; i++){
-                fact = fact*i
+        if (n > 0) {   // We use a nested loop startegy here for every number while loop is working and for that number the for loop is calculating the fatorial. 
+            let sum = 0;
+            let copyN = n
+            while (n > 0) {
+                let fact = 1;
+                let rem = n % 10
+                for (let i = 1; i <= rem; i++) {
+                    fact = fact * i
+                }
+                sum = sum + fact
+                n = Math.floor(n / 10)
             }
-            sum = sum + fact
-            n = Math.floor(n/10)
-        }
-        }
-        else{
-            console.log("The given number should be greater than zero and also non-negative!");
-            
-        }
 
-    } 
+
+            if (copyN === sum) {
+                console.log(`Your given number ${sum} is a Strong Number`);
+
+            } else {
+                console.log(`Your given number ${copyN} is not a Strong number`);
+                console.log(copyN);
+
+            }
+        }
+        else {
+            console.log("The given number should be greater than zero and also non-negative!");
+
+        }
+    }
 }
+
+// Now, comes the Do-while loop
+// A do-while loop is a control flow statement that executes a block of code at least once and then repeatedly executes the block as long as a specified condition evaluates to true. 
+// This ensures that the code within the loop runs before the condition is tested, allowing for scenarios where the loop must execute at least one time regardless of the condition.
+
+
+// do{
+//     code 
+// }while(condition)
+
+// The Do-while loop is a exit control function, meaning it asks for the condition in the last.
+// Unlikely to the previuos 2 loops which are entry control loops, Meaning they ask for the condition in the starting
+
+
+
