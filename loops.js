@@ -213,6 +213,47 @@
 //     i++
 // }
 
+// let promp = prompt("Enter your number: ")
+
+// if (promp === null) {
+//     console.log("Prompt cancelled!!");
+// }
+// else {
+//     let n = Number(promp)
+
+//     if (isNaN(n)) {
+//         console.log("The given number is invalid");
+//     }
+//     else {
+//         if (n > 0) {
+//             // let sum = 0; Addition of number
+//             // while (n>0) {
+//             //     let rem = n%10
+//             //     sum = sum + rem
+//             //     n = Math.floor(n/10)
+//             // }
+//             // console.log(sum);
+
+//             let rev = 0; // Reverse order of numbers 
+//             while (n>0) {
+//                 let rem = n%10;
+//                 rev = rev*10 + rem;
+//                 n = Math.floor(n/10)
+//             }
+//             console.log(rev);
+            
+//         }
+//         else{
+//             console.log("The given number should be greater than zero and also non-negative!");
+            
+//         }
+
+//     } 
+// }
+
+
+// Now, we will learn how to solve the question of strong numbers: We will use the same boiler code which we are using.
+
 let promp = prompt("Enter your number: ")
 
 if (promp === null) {
@@ -226,13 +267,16 @@ else {
     }
     else {
         if (n > 0) {
-            let sum = 0;
-            while (n>0) {
-                let rem = n%10
-                sum = sum + rem
-                n = Math.floor(n/10)
+        let sum = 0;
+        while (n>0) {
+            let fact= 1;
+            let rem = n%10
+            for(let i =1 ; i<=rem; i++){
+                fact = fact*i
             }
-            console.log(sum);
+            sum = sum + fact
+            n = Math.floor(n/10)
+        }
         }
         else{
             console.log("The given number should be greater than zero and also non-negative!");
