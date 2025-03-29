@@ -364,5 +364,36 @@ do {
 } while (attempts < maxAttempts);
 
 
+// A simple calculator using the do while loop.
 
+let num1, num2, operation, result;
 
+console.log("Welcome to the Calculator!");
+do {
+    num1 = Number(prompt("Enter the first number:"));
+    num2 = Number(prompt("Enter the second number:"));
+    operation = prompt("Enter the operation (+, -, *, /) or 'exit' to quit:");
+
+    if (operation === '+') {
+        result = num1 + num2;
+        console.log(`Result: ${num1} + ${num2} = ${result}`);
+    } else if (operation === '-') {
+        result = num1 - num2;
+        console.log(`Result: ${num1} - ${num2} = ${result}`);
+    } else if (operation === '*') {
+        result = num1 * num2;
+        console.log(`Result: ${num1} * ${num2} = ${result}`);
+    } else if (operation === '/') {
+        if (num2 !== 0) {
+            result = num1 / num2;
+            console.log(`Result: ${num1} / ${num2} = ${result}`);
+        } else {
+            console.log("Error: Division by zero is not allowed.");
+        }
+    } else if (operation !== 'exit') {
+        console.log("Invalid operation! Please try again.");
+    }
+
+} while (operation !== 'exit');
+
+console.log("Thank you for using the calculator!");
