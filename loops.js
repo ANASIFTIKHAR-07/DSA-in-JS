@@ -327,8 +327,42 @@ while(guess !== random) {
         } else{
             console.log(`Congratulations! 🎉 You've guessed the correct number: ${random}`);
         }
-
 }
+
+
+// It is a more advance approach of doing the same question, and i like this one a lot because it add a max attempt factor for more challenge.
+let advancedRandom = Math.floor(Math.random() * 100) + 1;
+let advancedGuess = -1;
+let attempts = 0;
+const maxAttempts = 10;
+
+console.log("Welcome to the Advanced Guessing Game!");
+console.log(`You have ${maxAttempts} attempts to guess the number between 1 and 100.`);
+
+do {
+    advancedGuess = Number(prompt("Enter your guess:"));
+    attempts++;
+
+    if (advancedGuess < 1 || isNaN(advancedGuess) || advancedGuess > 100) {
+        console.log("Invalid input! Please enter a number between 1 and 100.");
+        attempts--; // Do not count invalid attempts
+        continue;
+    }
+
+    if (advancedGuess > advancedRandom) {
+        console.log(`Your guess of ${advancedGuess} is too high. Try again!`);
+    } else if (advancedGuess < advancedRandom) {
+        console.log(`Your guess of ${advancedGuess} is too low. Try again!`);
+    } else {
+        console.log(`Congratulations! 🎉 You've guessed the correct number: ${advancedRandom} in ${attempts} attempts!`);
+        break;
+    }
+
+    if (attempts === maxAttempts) {
+        console.log(`Sorry! You've used all your attempts. The correct number was ${advancedRandom}.`);
+    }
+} while (attempts < maxAttempts);
+
 
 
 
