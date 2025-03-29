@@ -309,4 +309,26 @@ else {
 // Unlikely to the previuos 2 loops which are entry control loops, Meaning they ask for the condition in the starting
 
 
+let random = Math.floor(Math.random()*100) + 1 
+
+
+let guess = -1;
+
+while(guess !== random) {
+        guess = Number(prompt("Guess the Number"));
+        if (guess<0 || isNaN(guess) || guess> 100) {
+            console.log("The number is invalid! Please Try again with a valid number!");
+            continue
+        }
+        if(guess > random){
+            console.log(`Your guess of ${guess} is higher than the random number. Try a lower number!`);
+        }else if(guess < random){
+            console.log(`Your guess of ${guess} is lower than the random number. Try a higher number!`);
+        } else{
+            console.log(`Congratulations! 🎉 You've guessed the correct number: ${random}`);
+        }
+
+}
+
+
 
