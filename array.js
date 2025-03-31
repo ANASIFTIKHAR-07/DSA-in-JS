@@ -69,4 +69,29 @@ for(let i = 0; i< arr.length; i++){
 
 console.log(sum); // ANS: 150, In this case we will get the sum of all the values present in arrays
 
+// Finding the maximum value in the array
 
+
+let arr2 = [100, 26, 250, 249, 150]
+
+let max = arr2[0]
+
+for(let i = 1; i< arr.length; i++){
+        if(max< arr[i]){
+            max = arr[i];
+        }
+}
+
+console.log(max);
+
+// Finding the Minimum value in the array
+
+let arr3 = [100, 26, 250, 249, 150] 
+
+let min = arr3[0];
+
+for(let i = 1; i < arr.length; i++){
+        if(min < arr[i]){
+            min = arr[i]
+        }
+}
