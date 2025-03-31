@@ -1,4 +1,5 @@
 // We are starting the Arrays in the DSA learnings. I will learn different types of techinques and methods to solve
+// Array is a linear data structure storing multiple values in a continuous manner.
 // Problems related the DSA.
 let fruits = ["Apple", "Banana", "Cherry", "Date"];
 
@@ -35,3 +36,37 @@ fruits.forEach((fruit, index) => {
 
 // The Javascript does have the ability of the dynamic array unlike the C++, Java(which have demands the fixed length of the array).
 //  But we can also set the array static.
+// We cannot set the length of the array in js. The js has always the capability to stare more values than stated.
+// In the DSA, The better approach to assign the values to the indexes is by arr[1] = 100 like this.
+// We should assign the values by this method for better undestanding rather than the push method.
+
+
+// let arr = new Array(3)
+
+// arr.push(100)
+
+// console.log(arr);
+// In this case, where we are pushing the 100, the result will be interesting that 100 will be on the 4th index.
+// Interesting isn't it? The first three inexes will be empty.
+
+
+let userArray = new Array(5); // Create an array of length 5
+
+for (let i = 0; i < userArray.length; i++) {
+    userArray[i] = prompt(`Enter value for index ${i}:`); // Take values using prompt
+}
+
+console.log("User input array:", userArray); // Display the array
+
+
+let arr = [10, 20, 30, 40, 50];
+
+let sum = 0;
+
+for(let i = 0; i< arr.length; i++){
+        sum = sum + arr[i]
+}
+
+console.log(sum); // ANS: 150, In this case we will get the sum of all the values present in arrays
+
+
