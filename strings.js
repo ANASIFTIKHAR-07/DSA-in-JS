@@ -10,6 +10,7 @@
 
 // 1. length - Returns the length of the string.
 let exampleString = "Hello, World!";
+// Length is specifically a property of string
 console.log("Length of the string:", exampleString.length); // Output: 13
 
 // 2. charAt() - Returns the character at a specified index.
@@ -39,3 +40,23 @@ console.log("Replace 'World' with 'JavaScript':", exampleString.replace('World',
 
 // 10. includes() - Checks if a string contains a specified value.
 console.log("Does the string include 'Hello'? :", exampleString.includes('Hello')); // Output: true
+
+// 11. substring() - Returns a subset of a string between two specified indices.
+console.log("Substring from index 0 to 5:", exampleString.substring(0, 5)); // Output: Hello
+
+// 12. substr() - Returns a portion of the string, starting at the specified index and extending for a given number of characters.
+console.log("Substr from index 7, length 5:", exampleString.substr(7, 5)); // Output: World
+
+// 13. concat() - Combines two or more strings and returns a new string.
+let additionalString = " How are you?";
+console.log("Concatenated string:", exampleString.concat(additionalString)); // Output: Hello, World! How are you?
+
+// 14. startsWith() - Checks if a string starts with a specified value.
+console.log("Does the string start with 'Hello'? :", exampleString.startsWith('Hello')); // Output: true
+
+// 15. endsWith() - Checks if a string ends with a specified value.
+console.log("Does the string end with '!'? :", exampleString.endsWith('!')); // Output: true
+
+// 16. repeat() - Returns a new string with a specified number of copies of the original string.
+console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: Hello, World!Hello, World!Hello, World!
+
