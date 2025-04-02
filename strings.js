@@ -79,4 +79,12 @@ let rev = ""
 for(let i = newString.length-1; i>= 0; i--){
         rev = rev + newString.charAt(i)
 }  
+
+if (rev === newString) { // Palindrome checker
+    console.log("The following word is a palindrome");
+} else{
+    console.log("No palindrome");
+    
+}
+
 console.log(rev); // Works exactly the same like the before one.
