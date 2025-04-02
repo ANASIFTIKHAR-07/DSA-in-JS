@@ -60,3 +60,23 @@ console.log("Does the string end with '!'? :", exampleString.endsWith('!')); // 
 // 16. repeat() - Returns a new string with a specified number of copies of the original string.
 console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: Hello, World!Hello, World!Hello, World!
 
+
+let newString = "Hello, World!";
+
+// 1. Print each character on a new line
+for (let char of newString) {
+    console.log(char);
+}
+
+// 2. Print in reverse order
+let reversedString = newString.split('').reverse().join('');
+console.log("Reversed string:", reversedString); // Output: !dlroW ,olleH
+
+// Another method:
+
+let rev = ""
+
+for(let i = newString.length-1; i>= 0; i--){
+        rev = rev + newString.charAt(i)
+}  
+console.log(rev); // Works exactly the same like the before one.
