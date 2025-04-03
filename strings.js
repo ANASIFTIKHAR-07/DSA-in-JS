@@ -119,7 +119,7 @@ console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: H
 
 // Toggle the characters of the string
 // UPPER-CASE -> lower-case
-// lower-case -> UPPER-CASE
+// lower-case -> UPPER-CASE 
 
 let s = prompt("Enter the String")
 
@@ -135,5 +135,36 @@ for(let i = 0; i<= s.length-1; i++){
         }
 }
 console.log(toggle);
+
+// First approach using an object to store character frequencies
+let frequency = {}; // Initialize an empty object to store character frequencies.
+
+for (let char of s) { // Loop through each character in the string 's'.
+    if (frequency[char]) { // Check if the character already exists in the frequency object.
+        frequency[char]++; // If it exists, increment its count by 1.
+    } else {
+        frequency[char] = 1; // If it doesn't exist, initialize its count to 1.
+    }
+}
+
+console.log("Character frequency (using object):", frequency); // Output the frequency object to the console.
+
+// Second approach using an array for character frequency (DSA perspective)
+let freqArray = new Array(256).fill(0); // Create an array of size 256 (for ASCII characters) and initialize all counts to 0.
+
+for (let char of s) { // Loop through each character in the string 's'.
+    freqArray[char.charCodeAt(0)]++; // Increment the count at the index corresponding to the character's ASCII value.
+}
+
+console.log("Character frequency (using array):"); // Output the frequency using the array method.
+for (let i = 0; i < freqArray.length; i++) { // Loop through the frequency array.
+    if (freqArray[i] > 0) { // Check if the count is greater than 0.
+        console.log(String.fromCharCode(i) + ": " + freqArray[i]); // Output the character and its frequency.
+    }
+}
+
+
+
+
 
 
