@@ -61,30 +61,59 @@ console.log("Does the string end with '!'? :", exampleString.endsWith('!')); // 
 console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: Hello, World!Hello, World!Hello, World!
 
 
-let newString = "Hello, World!";
 
-// 1. Print each character on a new line
-for (let char of newString) {
-    console.log(char);
-}
+// Execution No 1:
 
-// 2. Print in reverse order
-let reversedString = newString.split('').reverse().join('');
-console.log("Reversed string:", reversedString); // Output: !dlroW ,olleH
+// let newString = "Hello, World!";
 
-// Another method:
+// // 1. Print each character on a new line
+// for (let char of newString) {
+//     console.log(char);
+// }
 
-let rev = ""
+// // 2. Print in reverse order
+// let reversedString = newString.split('').reverse().join(''); // But this is not a DSA based solution
+// console.log("Reversed string:", reversedString); // Output: !dlroW ,olleH
 
-for(let i = newString.length-1; i>= 0; i--){
-        rev = rev + newString.charAt(i)
-}  
+// // Another method:
 
-if (rev === newString) { // Palindrome checker
-    console.log("The following word is a palindrome");
-} else{
-    console.log("No palindrome");
+// let rev = ""
+
+// for(let i = newString.length-1; i>= 0; i--){
+//         rev = rev + newString.charAt(i)
+// }  
+
+// if (rev === newString) { // Palindrome checker
+//     console.log("The following word is a palindrome");
+// } else{
+//     console.log("No palindrome");
     
+// }
+
+// console.log(rev); // Works exactly the same like the before one.
+
+
+// Execution No 2:
+
+// This is method is DSA perspective based and also more efficient than the previous one, Covering the extra space
+let str = prompt("Enter your string: ")
+
+
+let i = 0 ,  j = str.length-1
+
+let isPallindrome = true
+
+while(i != j){
+    if(str.charAt(i) != str.charAt(j)){
+            isPallindrome = false
+            break;
+    }
+
+    i++ 
+    j--
 }
 
-console.log(rev); // Works exactly the same like the before one.
+if(isPallindrome) console.log("The string is Pallindrome");
+else console.log("The string is not pallindrome");
+
+
