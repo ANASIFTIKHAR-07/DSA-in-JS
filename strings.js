@@ -96,24 +96,44 @@ console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: H
 // Execution No 2:
 
 // This is method is DSA perspective based and also more efficient than the previous one, Covering the extra space
-let str = prompt("Enter your string: ")
+// let str = prompt("Enter your string: ")
 
 
-let i = 0 ,  j = str.length-1
+// let i = 0 ,  j = str.length-1
 
-let isPallindrome = true
+// let isPallindrome = true
 
-while(i != j){
-    if(str.charAt(i) != str.charAt(j)){
-            isPallindrome = false
-            break;
-    }
+// while(i != j){
+//     if(str.charAt(i) != str.charAt(j)){
+//             isPallindrome = false
+//             break;
+//     }
 
-    i++ 
-    j--
+//     i++ 
+//     j--
+// }
+
+// if(isPallindrome) console.log("The string is Pallindrome");
+// else console.log("The string is not pallindrome");
+
+
+// Toggle the characters of the string
+// UPPER-CASE -> lower-case
+// lower-case -> UPPER-CASE
+
+let s = prompt("Enter the String")
+
+let toggle = ""
+
+for(let i = 0; i<= s.length-1; i++){
+    let ch = s.charCodeAt(i)
+
+        if(ch >= 65 && ch <= 90){
+                toggle = toggle + String.fromCharCode(ch + 32)
+        } else if(ch >= 97 && ch <= 122) {
+            toggle = toggle + String.fromCharCode(ch - 32)
+        }
 }
-
-if(isPallindrome) console.log("The string is Pallindrome");
-else console.log("The string is not pallindrome");
+console.log(toggle);
 
 
