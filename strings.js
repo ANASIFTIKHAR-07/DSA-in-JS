@@ -121,20 +121,20 @@ console.log("Repeat the string 3 times:", exampleString.repeat(3)); // Output: H
 // UPPER-CASE -> lower-case
 // lower-case -> UPPER-CASE 
 
-let s = prompt("Enter the String")
+// let s = prompt("Enter the String")
 
-let toggle = ""
+// let toggle = ""
 
-for(let i = 0; i<= s.length-1; i++){
-    let ch = s.charCodeAt(i)
+// for(let i = 0; i<= s.length-1; i++){
+//     let ch = s.charCodeAt(i)
 
-        if(ch >= 65 && ch <= 90){
-                toggle = toggle + String.fromCharCode(ch + 32)
-        } else if(ch >= 97 && ch <= 122) {
-            toggle = toggle + String.fromCharCode(ch - 32)
-        }
-}
-console.log(toggle);
+//         if(ch >= 65 && ch <= 90){
+//                 toggle = toggle + String.fromCharCode(ch + 32)
+//         } else if(ch >= 97 && ch <= 122) {
+//             toggle = toggle + String.fromCharCode(ch - 32)
+//         }
+// }
+// console.log(toggle);
 
 // First approach using an object to store character frequencies
 let frequency = {}; // Initialize an empty object to store character frequencies.
@@ -164,7 +164,29 @@ for (let i = 0; i < freqArray.length; i++) { // Loop through the frequency array
 }
 
 
+// Advanced Array problems:
 
+
+let arr = [1,2,3,4,5]
+
+let copy = arr[0]
+
+for(let i = 0; i< arr.length-1; i++){
+    arr[i] = arr[i+1]
+}
+
+arr[arr.length-1] = copy
+
+console.log(arr);
+
+// Another method:
+
+let arr1 = [1, 2, 3, 4, 5]
+
+let shiftedArr = arr.splice(1)
+shiftedArr.push(arr[0])
+
+console.log(shiftedArr);
 
 
 
