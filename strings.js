@@ -180,6 +180,19 @@ arr[arr.length-1] = copy
 console.log(arr);
 
 
+// This is the reversing of the previous question
+let leftArr = [1,2,3,4,5]
+
+let newCopy = arr[arr.length-1]
+
+for(let i = arr.length-1; i>0; i--){
+    arr[i] = arr[i-1]
+}
+arr[0] = newCopy
+
+console.log(leftArr);
+
+
 
 // Another method:
 
@@ -220,7 +233,17 @@ for (let i = 0; i < sortedArray.length; i++) {
 console.log("Array after removing duplicates:", uniqueArray); // Output the unique array
 
 
+// Another question
 
+// Using nesteed looping, These kind of questions are good practice for doing the repeatitive tasks especially using the nested loops
+
+for(let i = 1; i<=4; i++){
+    console.log(j + "execution");
+    for(let j = 1; j<=3; j++){
+        console.log("Hello");
+        
+    }
+}
 
 
 
