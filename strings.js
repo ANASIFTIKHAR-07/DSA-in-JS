@@ -179,6 +179,8 @@ arr[arr.length-1] = copy
 
 console.log(arr);
 
+
+
 // Another method:
 
 let arr1 = [1, 2, 3, 4, 5]
@@ -187,6 +189,38 @@ let shiftedArr = arr.splice(1)
 shiftedArr.push(arr[0])
 
 console.log(shiftedArr);
+
+let arrToRotate = [1, 2, 3, 4, 5];
+let k = 2; // Number of positions to rotate
+const n = arrToRotate.length;
+k = k % n; // Handle cases where k is greater than the array length
+if (k < 0) k += n; // Handle negative rotations
+
+// Using nested loops to perform the rotation
+for (let i = 0; i < k; i++) {
+    let temp = arrToRotate[n - 1]; // Store the last element
+    for (let j = n - 1; j > 0; j--) {
+        arrToRotate[j] = arrToRotate[j - 1]; // Shift elements to the right
+    }
+    arrToRotate[0] = temp; // Place the last element at the front
+}
+
+console.log("Array after rotation:", arrToRotate); // Output: [4, 5, 1, 2, 3]
+let sortedArray = [1, 1, 2, 2, 3, 4, 4, 5]; // Example sorted array
+let uniqueArray = [];
+
+// Loop through the sorted array
+for (let i = 0; i < sortedArray.length; i++) {
+    // Check if the current element is not the same as the last added element
+    if (i === 0 || sortedArray[i] !== sortedArray[i - 1]) {
+        uniqueArray.push(sortedArray[i]); // Add unique element to the new array
+    }
+}
+
+console.log("Array after removing duplicates:", uniqueArray); // Output the unique array
+
+
+
 
 
 
