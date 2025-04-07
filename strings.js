@@ -246,4 +246,23 @@ for(let i = 1; i<=4; i++){
 }
 
 
+// Sorting an array using the bubble sort algorithm
+let unsortedArray = [5, 3, 8, 4, 2];
+let len = unsortedArray.length;
+
+// Bubble sort algorithm
+for (let i = 0; i < len - 1; i++) {
+    for (let j = 0; j < len - i - 1; j++) {
+        if (unsortedArray[j] > unsortedArray[j + 1]) {
+            // Swap the elements
+            let temp = unsortedArray[j];
+            unsortedArray[j] = unsortedArray[j + 1];
+            unsortedArray[j + 1] = temp;
+        }
+    }
+}
+
+console.log("Sorted array using bubble sort:", unsortedArray); // Output the sorted array
+
+
 
