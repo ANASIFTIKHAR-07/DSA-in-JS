@@ -294,6 +294,36 @@ let sortedDescendingArray = selectionSortDescending(arrayToSort); // Sort the ar
 console.log("Array sorted from highest to lowest:", sortedDescendingArray); // Output the sorted array
 
 
+// Function to sort an array in ascending order using selection sort
+function selectionSortAscending(arr) {
+    let n = arr.length;
+
+    // Traverse through all array elements
+    for (let i = 0; i < n - 1; i++) {
+        // Find the minimum element in the unsorted part of the array
+        let minIndex = i;
+        for (let j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j; // Update minIndex if a smaller element is found
+            }
+        }
+        // Swap the found minimum element with the first element of the unsorted part
+        if (minIndex !== i) {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+    return arr;
+}
+
+let arrayToSortAsc = [12, 5, 8, 20, 3, 15]; // Example array
+let sortedAscendingArray = selectionSortAscending(arrayToSortAsc); // Sort the array in ascending order
+
+console.log("Array sorted from lowest to highest:", sortedAscendingArray); // Output the sorted array
+
+
+
 
 
 
