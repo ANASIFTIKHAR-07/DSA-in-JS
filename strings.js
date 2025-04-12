@@ -265,4 +265,35 @@ for (let i = 0; i < len - 1; i++) {
 console.log("Sorted array using bubble sort:", unsortedArray); // Output the sorted array
 
 
+// Function to sort an array in descending order using selection sort
+function selectionSortDescending(arr) {
+    let n = arr.length;
+
+    // Traverse through all array elements
+    for (let i = 0; i < n - 1; i++) {
+        // Find the maximum element in the unsorted part of the array
+        let maxIndex = i;
+        for (let j = i + 1; j < n; j++) {
+            if (arr[j] > arr[maxIndex]) {
+                maxIndex = j; // Update maxIndex if a larger element is found
+            }
+        }
+        // Swap the found maximum element with the first element of the unsorted part
+        if (maxIndex !== i) {
+            let temp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = temp;
+        }
+    }
+    return arr;
+}
+
+let arrayToSort = [12, 5, 8, 20, 3, 15]; // Example array
+let sortedDescendingArray = selectionSortDescending(arrayToSort); // Sort the array in descending order
+
+console.log("Array sorted from highest to lowest:", sortedDescendingArray); // Output the sorted array
+
+
+
+
 
