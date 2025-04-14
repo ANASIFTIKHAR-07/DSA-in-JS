@@ -321,6 +321,20 @@ let arrayToSortAsc = [12, 5, 8, 20, 3, 15]; // Example array
 let sortedAscendingArray = selectionSortAscending(arrayToSortAsc); // Sort the array in ascending order
 
 console.log("Array sorted from lowest to highest:", sortedAscendingArray); // Output the sorted array
+function duplicateArray(arr) {
+    let duplicatedArray = new Array(arr.length); // Create a new array with the same length
+    for (let i = 0; i < arr.length; i++) {
+        duplicatedArray[i] = arr[i]; // Copy each element to the new array
+    }
+    return duplicatedArray;
+}
+
+let originalArray = [1, 2, 3, 4, 5]; // Example array
+let newArray = duplicateArray(originalArray); // Duplicate the array
+
+console.log("Original Array:", originalArray); // Output the original array
+console.log("Duplicated Array:", newArray); // Output the duplicated array
+
 
 
 
