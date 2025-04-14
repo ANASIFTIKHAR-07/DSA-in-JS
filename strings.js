@@ -336,6 +336,31 @@ console.log("Original Array:", originalArray); // Output the original array
 console.log("Duplicated Array:", newArray); // Output the duplicated array
 
 
+// Left rotation by k Element
+
+let arr = [1, 2, 3, 4, 5]
+let temp = new Array(arr.length)
+let promp  = prompt("Enter The value of K:  ")
+
+promp = promp % arr.length
+
+for( let i = 0; i< arr.length; i++){
+    temp[i] = arr((i+promp) % arr.length)
+}
+console.log(temp);
+
+
+// Right rotation by K element
+// let arr = [1, 2, 3, 4, 5]
+// let temp = new Array(arr.length)
+// let promp  = prompt("Enter The value of K:  ")
+
+// promp = promp % arr.length
+
+// for( let i = 0; i< arr.length; i++){
+//      arr((i+promp) % arr.length) = temp[i]
+// }
+// console.log(temp);
 
 
 
