@@ -363,6 +363,27 @@ console.log(temp);
 // console.log(temp);
 
 
+function findDuplicates(arr) {
+    let duplicates = [];
+    let seen = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (seen[arr[i]]) {
+            duplicates.push(arr[i]);
+        } else {
+            seen[arr[i]] = true;
+        }
+    }
+    return duplicates;
+}
+
+let arrayWithDuplicates = [1, 2, 3, 4, 5, 2, 3, 6, 7, 1]; // Example array with duplicates
+let duplicateElements = findDuplicates(arrayWithDuplicates); // Find duplicates in the array
+
+console.log("Duplicate elements in the array:", duplicateElements); // Output the duplicate elements
+
+
+
 
 
 
