@@ -383,6 +383,26 @@ let duplicateElements = findDuplicates(arrayWithDuplicates); // Find duplicates 
 console.log("Duplicate elements in the array:", duplicateElements); // Output the duplicate elements
 
 
+// Problem: Find the maximum subarray sum using Kadane's Algorithm
+
+function maxSubArraySum(arr) {
+    let maxSoFar = arr[0];
+    let maxEndingHere = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
+        maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    }
+
+    return maxSoFar;
+}
+
+let array = [-2, 1, -3, 4, -1, 2, 1, -5, 4]; // Example array
+let maxSum = maxSubArraySum(array); // Find the maximum subarray sum
+
+console.log("Maximum subarray sum:", maxSum); // Output the maximum subarray sum
+
+
 
 
 
