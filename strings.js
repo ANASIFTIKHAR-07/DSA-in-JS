@@ -402,6 +402,38 @@ let maxSum = maxSubArraySum(array); // Find the maximum subarray sum
 
 console.log("Maximum subarray sum:", maxSum); // Output the maximum subarray sum
 
+// Problem: Find the longest common prefix among an array of strings
+
+function longestCommonPrefix(strs) {
+    if (strs.length === 0) return "";
+    if (strs.length === 1) return strs[0];
+    
+    // Sort the array to make comparison easier
+    strs.sort();
+    
+    // Take first and last string after sorting
+    let first = strs[0];
+    let last = strs[strs.length - 1];
+    let commonPrefix = "";
+    
+    // Compare characters from first and last string
+    for (let i = 0; i < first.length; i++) {
+        if (i < last.length && first[i] === last[i]) {
+            commonPrefix += first[i];
+        } else {
+            break;
+        }
+    }
+    
+    return commonPrefix;
+}
+
+let stringArray = ["flower", "flow", "flight"]; // Example array of strings
+let commonPrefix = longestCommonPrefix(stringArray); // Find the longest common prefix
+
+console.log("Longest common prefix:", commonPrefix); // Output the longest common prefix
+
+
 
 
 
