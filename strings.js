@@ -433,6 +433,42 @@ let commonPrefix = longestCommonPrefix(stringArray); // Find the longest common 
 
 console.log("Longest common prefix:", commonPrefix); // Output the longest common prefix
 
+// Problem: Find the longest palindromic substring in a string
+
+function longestPalindromicSubstring(str) {
+    if (!str || str.length < 2) return str;
+    
+    let start = 0;
+    let maxLength = 1;
+    
+    // Helper function to expand around center
+    function expandAroundCenter(left, right) {
+        while (left >= 0 && right < str.length && str[left] === str[right]) {
+            const currentLength = right - left + 1;
+            if (currentLength > maxLength) {
+                start = left;
+                maxLength = currentLength;
+            }
+            left--;
+            right++;
+        }
+    }
+    
+    // Check each position as potential center
+    for (let i = 0; i < str.length; i++) {
+        expandAroundCenter(i, i); // Odd length palindromes
+        expandAroundCenter(i, i + 1); // Even length palindromes
+    }
+    
+    return str.substring(start, start + maxLength);
+}
+
+let testString = "babad"; // Example string
+let longestPalindrome = longestPalindromicSubstring(testString);
+
+console.log("Longest palindromic substring:", longestPalindrome); // Output the longest palindromic substring
+
+
 
 
 
