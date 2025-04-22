@@ -468,6 +468,59 @@ let longestPalindrome = longestPalindromicSubstring(testString);
 
 console.log("Longest palindromic substring:", longestPalindrome); // Output the longest palindromic substring
 
+// Problem: Count all palindromic substrings in a string using Manacher's Algorithm
+// This is a more efficient O(n) solution compared to the O(n²) approach above
+
+let s = "abaab"; // Example string
+let strSize = s.length;
+
+// Transform string to handle even length palindromes
+// Insert special character between each char and at ends
+let t = "^#" + s.split('').join('#') + "#$";
+let length  = t.length;
+let p = new Array(length).fill(0); // Array to store palindrome lengths
+
+let center = 0; // Current center of palindrome
+let right = 0;  // Right boundary of current palindrome
+
+let totalPalindromes = 0;
+
+// Manacher's Algorithm
+for (let i = 1; i < length - 1; i++) {
+    if (i < right) {
+        // Mirror property of palindromes
+        p[i] = Math.min(right - i, p[2 * center - i]);
+    }
+    
+    // Expand around current position
+    while (t[i + 1 + p[i]] === t[i - 1 - p[i]]) {
+        p[i]++;
+    }
+    
+    // Update center and right boundary if needed
+    if (i + p[i] > right) {
+        center = i;
+        right = i + p[i];
+    }
+    
+    // Count palindromes centered at current position
+    // Each value in p[i] represents the number of palindromes centered at i
+    totalPalindromes += Math.floor((p[i] + 1) / 2);
+}
+
+console.log("Total number of palindromic substrings:", totalPalindromes);
+// Also print some example palindromic substrings
+let palindromes = new Set();
+for (let i = 1; i < length - 1; i++) {
+    let start = Math.floor((i - p[i]) / 2);
+    let end = start + p[i];
+    palindromes.add(s.substring(start, end));
+}
+console.log("Some palindromic substrings:", [...palindromes].filter(x => x.length > 0));
+
+
+
+
 
 
 
