@@ -518,6 +518,59 @@ for (let i = 1; i < length - 1; i++) {
 }
 console.log("Some palindromic substrings:", [...palindromes].filter(x => x.length > 0));
 
+// Problem: Find the first non-repeating character in a string
+// For example, in "leetcode" return 0 (l is the first non-repeating char)
+// In "loveleetcode" return 2 (v is the first non-repeating char)
+
+function findFirstUniqueChar(s) {
+    // Create a frequency map
+    let charMap = new Map();
+    
+    // First pass: count frequency of each character
+    for (let char of s) {
+        charMap.set(char, (charMap.get(char) || 0) + 1);
+    }
+    
+    // Second pass: find first char with frequency 1
+    for (let i = 0; i < s.length; i++) {
+        if (charMap.get(s[i]) === 1) {
+            return i;
+        }
+    }
+    
+    return -1; // No unique character found
+}
+
+// Test cases
+let testStrings = [
+    "leetcode",
+    "loveleetcode", 
+    "aabb",
+    "aadadaad",
+    "abcde"
+];
+
+console.log("\nTesting First Unique Character:");
+testStrings.forEach(str => {
+    let result = findFirstUniqueChar(str);
+    console.log(`Input: "${str}"`);
+    if (result !== -1) {
+        console.log(`Output: ${result} (character '${str[result]}')`);
+    } else {
+        console.log("Output: -1 (no unique character found)");
+    }
+    console.log();
+});
+
+/* 
+Time Complexity: O(n) where n is length of string
+Space Complexity: O(1) since English alphabet has fixed size
+   - Map will never store more than 26 characters
+*/
+
+
+
+
 
 
 
