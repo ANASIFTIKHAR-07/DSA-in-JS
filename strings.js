@@ -571,6 +571,43 @@ Space Complexity: O(1) since English alphabet has fixed size
 
 
 
+function findLastUniqueChar(s) {
+    // Create a frequency map
+    let charMap = new Map();
+    
+    // First pass: count frequency of each character
+    for (let char of s) {
+        charMap.set(char, (charMap.get(char) || 0) + 1);
+    }
+    
+    // Second pass: find last char with frequency 1
+    for (let i = s.length - 1; i >= 0; i--) {
+        if (charMap.get(s[i]) === 1) {
+            return i;
+        }
+    }
+    
+    return -1; // No unique character found
+}
+
+// Test cases
+console.log("\nTesting Last Unique Character:");
+testStrings.forEach(str => {
+    let result = findLastUniqueChar(str);
+    console.log(`Input: "${str}"`);
+    if (result !== -1) {
+        console.log(`Output: ${result} (character '${str[result]}')`);
+    } else {
+        console.log("Output: -1 (no unique character found)");
+    }
+    console.log();
+});
+
+/* 
+Time Complexity: O(n) where n is length of string
+Space Complexity: O(1) since English alphabet has fixed size
+   - Map will never store more than 26 characters
+*/
 
 
 
